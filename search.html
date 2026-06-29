@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 id='text1'></h1>
+<h1> logs: </h1>
+<h1 id='text2'></h1>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  // 1. Parse the query parameters from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawQuery = urlParams.get('search');
+
+  // 2. Target your heading element
+  const heading = document.getElementById('text1');
+
+  if (rawQuery) {
+    // 3. decodeURIComponent converts %20 to spaces, %21 to exclamation marks, etc.
+    heading.textContent = decodeURIComponent(rawQuery);
+  } else {
+    heading.textContent = "No search term provided";
+  }
+});
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  // 1. Keep your valid pages safely inside a pure JavaScript array
+  const searchList = ['fish', 'cat', 'dog']; // Add more valid search terms here
+
+  // 2. Extract and decode the URL search term
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawQuery = urlParams.get('search');
+  const heading = document.getElementById('text2');
+
+  if (rawQuery) {
+    // 3. Clean up the text (lowercase and remove accidental spaces)
+    const decodedQuery = decodeURIComponent(rawQuery).trim().toLowerCase();
+    heading.textContent = decodedQuery;
+  if (decodedQuery === "admmin") {
+        alert("welcome back admmin");
+        window.location.href = "admin/adminX65Fi.html";
+      }
+    // 4. Look up the item directly in the array
+    if (searchList.includes(decodedQuery)) {
+      // Instant redirect to fish.html, cat.html, etc.
+      window.location.href = `pages/${decodedQuery}.html`;
+    } else {
+      // Fallback message if it's not in your array
+      heading.textContent = `"${decodedQuery}" doeznt exist.`;
+    }
+  } else {
+    heading.textContent = "No search blud";
+  }
+});
+</script>
+</body>

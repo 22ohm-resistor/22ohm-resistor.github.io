@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="pictures/goggle.png">
+</head>
+<body>
+<h1>admmin panel</h1>
+<input id="adminInput" type="text" placeholder="Enter admmin command">
+<button id="adminButton">excec</button>
+<script>
+    const adminButton = document.getElementById('adminButton');
+    const adminInput = document.getElementById('adminInput');
+if (adminButton && adminInput) {
+    adminButton.addEventListener('click', () => {
+        const command = adminInput.value.trim();
+        if (command) {
+            if (command == "back") {
+                window.location.href = "index.html?back=admminos";
+            }
+            // encodeURIComponent safely handles spaces and special characters
+            window.location.href = `adminX65Fi.html?comand=${encodeURIComponent(command)}`;
+        }
+    });
+}
+</script>
+</body>
+</html>

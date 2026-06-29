@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+<title>goggle</title>
+<link href="style.css" rel="stylesheet" />
+<link href="pictures/goggle.png" rel="icon">
+</head>
+<html>  
+  <body>
+    <img src="pictures/goggle.png">
+    <h1>goggle</h1>
+    <input id="input1" type="text">
+    <button id="search1"> search </button>
+    <script>
+      const searchButton = document.getElementById('search1');
+const searchInput = document.getElementById('input1');
+
+searchButton.addEventListener('click', () => {
+  const query = searchInput.value.trim();
+  
+  if (query) {
+    // encodeURIComponent safely handles spaces and special characters
+    window.location.href = `search.html?search=${encodeURIComponent(query)}`;
+  }
+});
+     </script>
+     <script>
+      window.addEventListener('DOMContentLoaded', () => {
+  // 1. Parse the query parameters from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawQuery = urlParams.get('back');
+  if (rawQuery) {
+    const decodedQuery = decodeURIComponent(rawQuery).trim().toLowerCase();
+    if (decodedQuery === "admminos") {
+      alert("welcome back admmin");
+    }
+  }
+
+});
+     </script>
+  </body>
+</html>
