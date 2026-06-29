@@ -1,0 +1,1 @@
+eh just trying to make a website for my nokia c1-01. for fun not serious project. my own stuff u can join website but not submit ideas. i might check for good ideas but that is like rare since i might check github a month idk
